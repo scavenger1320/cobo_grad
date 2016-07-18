@@ -1,0 +1,44 @@
+<div id="random" ng-controller="ForumsController as FC">
+	<div class="navMenu">
+		<a href="#/dashboard">Dashboard</a> | <a href="#/forum">Forum Main</a> | <a href="" ng-click="FC.logout()">Logout</a>
+	</div>
+	<table>
+		<thead>
+			<tr>
+				<th>Sub-Category</th>
+				<th>Latest</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<a href="#/forum/random/otherCollecting"><h4>Other Collectors</h4></a>
+					<p>Maybe you also collect coins, stamps, bottlecaps, or pocket lint.  You 
+						can talk about any other form of collecting here besides comic books.
+					</p>
+				</td>
+				<td>
+					<p ng-repeat="topic in FC.topics | filter:({subcategory: 'otherCollecting'}) | limitTo: 5"><a href="#/forum/{{ topic.category}}/{{ topic.subcategory}}/{{ topic._id }}">{{ topic.title }}</a> by {{ topic._user.username }} {{ topic.timeago }}</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#/forum/random/jokes"><h4>Jokes</h4></a>
+					<p>Think you're a comedian?  Test it out in here or just come in for a daily dose of laughter</p>
+				</td>
+				<td>
+					<p ng-repeat="topic in FC.topics | filter:({subcategory: 'jokes'}) | limitTo: 5"><a href="#/forum/{{ topic.category}}/{{ topic.subcategory}}/{{ topic._id }}">{{ topic.title }}</a> by {{ topic._user.username }} {{ topic.timeago }}</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#/forum/random/whatever"><h4>Whatever</h4></a>
+					<p>If it doesn't belong in any other forum, whatever it is, you can talk about it here.</p>
+				</td>
+				<td>
+					<p ng-repeat="topic in FC.topics | filter:({subcategory: 'whatever'}) | limitTo: 5"><a href="#/forum/{{ topic.category}}/{{ topic.subcategory}}/{{ topic._id }}">{{ topic.title }}</a> by {{ topic._user.username }} {{ topic.timeago }}</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

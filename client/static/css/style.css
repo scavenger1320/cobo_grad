@@ -1,0 +1,395 @@
+/*styling for main*/
+* {
+	margin: 0px;
+	padding: 0px;
+}
+html {
+	background: url(/static/images/comic_book_collage_by_comicsnjunk.png) no-repeat center center fixed;
+	background-size: cover;
+}
+#container {
+	width: 80%;
+	margin: 20px auto;
+	color: white;
+	border-radius: 6px;
+	font-family: sans-serif;
+}
+	#container h1 {
+		margin-bottom: 20px;
+	}
+	#mainTitle {
+		font-size: 4em;
+		font-family: "Impact","Charcoal", sans-serif;
+		display: inline-block;
+	}
+	#logButton {
+		padding: 15px 30px;
+		color: black;
+		background-color: white;
+		text-decoration: none;
+		border-radius: 5px;
+		font-size: 1.25em;
+		float: right;
+		margin-top: -130px;
+	}
+	.error {
+		color: red;
+		font-style: italic;
+	}
+	.warning {
+		color: rgba(215,36,36,100);
+		text-align: center;
+	}
+	.navMenu {
+		margin-bottom: 20px;
+		text-align: right;
+	}
+/*styling for home partial*/
+	#home img {
+		margin-top: 50px;
+		border-radius: 6px;
+	}
+	#home .homeSample {
+		background-color: rgba(255,248,220,.7);
+		color: black;
+		margin-top: 30px;
+		border-radius: 10px;
+		padding: 20px;
+		text-align: center;
+	}
+	#home .wdsold {
+		height: 220px;
+		width: 370px;
+		margin-top: 10px;
+	}
+	#home p {
+		margin-bottom: 10px;
+	}
+	#home a {
+		text-decoration: none;
+	}
+	.center {
+		width: 450px;
+		margin: 0 auto;
+		text-align: left;
+	}
+
+/*styling for login partial*/
+#login {
+	background-color: rgba(255,248,220,.8);
+	border-radius: 10px;
+	padding: 20px;
+	margin: 50px auto;
+	font-family: "geneva", sans-serif;
+	color: black;
+}
+	#login #backButton {
+		padding: 15px 30px;
+		color: black;
+		background-color: white;
+		text-decoration: none;
+		border-radius: 5px;
+		font-size: 1.25em;
+		float: right;
+		margin-top: -130px;
+	}
+	#login form {
+		padding: 20px;
+	}
+		#login fieldset {
+			padding: 20px;
+		}
+		#login label {
+			display: block;
+			margin-top: 10px;
+		}
+		#login .submit {
+			background-color: rgba(80,80,80,.5);
+			padding: 5px 12px;
+			border-radius: 5px;
+			margin-top: 10px;
+		}
+	#login a {
+		background-color: rgba(80,80,80,.5);
+		padding: 10px 37px;
+		text-decoration: none;
+		border-radius: 5px;
+		color: white;
+	}
+	#login #facebook {
+		background-color: blue;
+		color: white;
+		padding: 10px 37px;
+		text-decoration: none;
+		border-radius: 5px;
+	}
+	#login .error {
+		color: red;
+		font-style: italic;
+	}
+
+/*styling for the dashboard partial*/
+#dashboard {
+	background-color: rgba(255,248,220,.8);
+	border-radius: 10px;
+	padding: 20px;
+	margin: 50px auto;
+	color: black;
+}
+	#dashboard a {
+		background-color: rgba(80,80,80,.5);
+		padding: 10px 37px;
+		text-decoration: none;
+		border-radius: 5px;
+		display: inline-block;
+		color: white;
+	}
+	#dashboard .logout {
+		float: right;
+	}
+	#dashboard #accuracyMenu {
+		margin-top: 40px;
+	}
+
+/*styling for accuracy views*/
+#accuracy1 {
+	background-color: rgba(255,248,220,.8);
+	border-radius: 10px;
+	padding: 20px;
+	margin: 50px auto;
+	color: black;
+}
+	#accuracy1 h4 {
+		margin-top: 25px;
+	}
+	#accuracy1 form {
+		margin-top: 8px;
+	}
+	.gradeIt {
+		font-size: 3em;
+	}
+	.graded {
+		margin-top: 10px;
+		color: green;
+	}
+/*styling for accuracy2*/
+#accuracy2 {
+	background-color: rgba(255,248,220,.8);
+	border-radius: 10px;
+	padding: 20px;
+	margin: 50px auto;
+	color: black;
+}
+	#accuracy2 form {
+		margin-top: 20px;
+	}
+		#accuracy2 input, #accuracy2 label {
+			display: block;
+			margin-top: 8px;
+		}
+/*styling for accuracy3*/
+#accuracy3 {
+	background-color: rgba(255,248,220,.8);
+	border-radius: 10px;
+	padding: 20px;
+	margin: 50px auto;
+	color: black;
+}
+
+/*styling for forum*/
+#forum {
+	background-color: rgba(255,248,220,.8);
+	border-radius: 10px;
+	padding: 20px;
+	margin: 50px auto;
+	color: black;
+}
+	#forum table {
+
+	}
+		#forum table thead {
+			background-color: rgba(80,80,80,.5);
+			font-size: 1.5em;
+		}
+		#forum table th {
+			padding: 10px;
+			height: 30px;
+		}
+		#forum table td {
+			padding: 10px;
+			width: 50%;
+			height: 100px;
+			border-bottom: 1px solid gray;
+		}
+		#forum table td h4 {
+			width: 25%;
+			display: inline-block;
+		}
+		#forum table td p {
+			width: 60%;
+			display: inline-block;
+		}
+	.slide {
+		padding: 7px 17px;
+		background-color: rgba(255,255,255,.6);
+		color: black;
+		font-family: "arial black", gadget, sans-serif;
+		display: block;
+	}
+	.toggle {
+		display: none;
+		position: absolute;
+		padding: 20px;
+		background-color: rgba(189,183,107,.9);
+		width: 70%;
+	}
+		.toggle label {
+			display: block;
+			margin-top: 20px;
+		}
+		.toggle .add_topic {
+			margin-top: 20px;
+		}
+
+	/*styling for Cobo Grād news sub-forum*/
+	#coboGradNews {
+		background-color: rgba(255,248,220,.8);
+		border-radius: 10px;
+		padding: 20px;
+		margin: 50px auto;
+		color: black;
+	}
+		#coboGradNews table thead {
+			background-color: rgba(80,80,80,.5);
+			font-size: 1.5em;
+		}
+		#coboGradNews table th {
+			padding: 10px;
+			height: 30px;
+		}
+		#coboGradNews table td {
+			padding: 10px;
+			width: 50%;
+			height: 100px;
+			border-bottom: 1px solid gray;
+		}
+
+	/*styling for general discussion sub-forum*/
+	#generalDiscussion {
+		background-color: rgba(255,248,220,.8);
+		border-radius: 10px;
+		padding: 20px;
+		margin: 50px auto;
+		color: black;
+	}
+		#generalDiscussion table thead {
+			background-color: rgba(80,80,80,.5);
+			font-size: 1.5em;
+		}
+		#generalDiscussion table th {
+			padding: 10px;
+			height: 30px;
+		}
+		#generalDiscussion table td {
+			padding: 10px;
+			width: 50%;
+			height: 100px;
+			border-bottom: 1px solid gray;
+		}
+
+	/*styling for comic books sub-forum*/
+	#comicBooks {
+		background-color: rgba(255,248,220,.8);
+		border-radius: 10px;
+		padding: 20px;
+		margin: 50px auto;
+		color: black;
+	}
+		#comicBooks table thead {
+			background-color: rgba(80,80,80,.5);
+			font-size: 1.5em;
+		}
+		#comicBooks table th {
+			padding: 10px;
+			height: 30px;
+		}
+		#comicBooks table td {
+			padding: 10px;
+			width: 50%;
+			height: 100px;
+			border-bottom: 1px solid gray;
+		}
+
+	/*styling for random sub-forum*/
+	#random {
+		background-color: rgba(255,248,220,.8);
+		border-radius: 10px;
+		padding: 20px;
+		margin: 50px auto;
+		color: black;
+	}
+		#random table thead {
+			background-color: rgba(80,80,80,.5);
+			font-size: 1.5em;
+		}
+		#random table th {
+			padding: 10px;
+			height: 30px;
+		}
+		#random table td {
+			padding: 10px;
+			width: 50%;
+			height: 100px;
+			border-bottom: 1px solid gray;
+		}
+
+	/*styling for subcategories*/
+		#subcategory {
+			background-color: rgba(255,248,220,.8);
+			border-radius: 10px;
+			padding: 20px;
+			margin: 50px auto;
+			color: black;
+		}	
+			#subcategory table thead {
+			background-color: rgba(80,80,80,.5);
+			font-size: 1.5em;
+			}
+			#subcategory table th {
+				padding: 10px;
+				height: 30px;
+			}
+			#subcategory table td {
+				padding: 10px;
+				width: 50%;
+				height: 100px;
+				border-bottom: 1px solid gray;
+			}
+				#post {
+					background-color: rgba(255,248,220,.8);
+					border-radius: 10px;
+					padding: 20px;
+					margin: 50px auto;
+					color: black;
+				}	
+					#post .mainPost {
+						padding: 20px;
+						border: 1px solid rgba(0,0,0,.4);
+						width: 80%;
+						margin: 20px 0px;
+					}
+						#post .poster {
+							text-align: right;
+						}
+					#post .comment {
+						/*margin-left: 80px;*/
+						color: rgba(160,82,45,.9);
+						margin: 10px 0px 10px 80px;
+					}
+					#post .newComment {
+						margin-left: 80px;
+					}
+						#post .newComment textarea {
+							background-color: rgba(255,255,255,.5);
+						}
+					

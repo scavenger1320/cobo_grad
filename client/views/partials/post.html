@@ -1,0 +1,41 @@
+<div id="post" ng-controller="PostsController as PC">
+	<div class="navMenu">
+		<a href="#/dashboard">Dashboard</a> | <a href="#/forum">Forum Main</a> | <a href="#/forum/{{ PC.category }}">Back to Sub-Category List</a> | <a href="#/forum/{{ PC.posts[0]._topic.category }}/{{ PC.posts[0]._topic.subcategory }}">Back to Topics</a> | <a href="" ng-click="PC.logout()">Logout</a>
+	</div>
+	<h2>{{ PC.posts[0]._topic.title }}</h2>
+	<div class="post" ng-repeat="post in PC.posts">
+		<div class="mainPost">
+			<p>{{ post.content }}</p>
+			<p class="poster"> - {{ post._user.username }}</p>
+			<div ng-controller="CommentsController as CC">
+				<div class="comment" ng-repeat="comment in post.comments">
+					<p>{{ comment.comment }}</p>
+				</div>
+				<div class="newComment">	
+					<!-- <button class="slideComment" ng-hide="PC.loggedUser.username == 'Guest'">+ Reply to Post</button> -->
+					<div class="toggleComment">
+						<form>
+							<label for="comment"><textarea id="comment" cols="80" rows="3" ng-model="CC.newComment.comment"></textarea></label>
+								<div ng-if="CC.validationError.errors['comment'].kind" class="error">
+									{{ CC.validationError.errors['comment'].message }}
+								</div>
+							<input class="add_comment" type="submit" value="Add Comment" ng-click="CC.addComment(post._id)" />
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="newPost">	
+		<button class="slide" ng-hide="PC.loggedUser.username == 'Guest'">+ Reply to Topic</button>
+		<div class="toggle">
+			<form>
+				<label for="content">Post <textarea id="content" cols="80" rows="20" ng-model="PC.newPost.content"></textarea></label>
+					<div ng-if="PC.validationError.errors['content'].kind" class="error">
+						{{ PC.validationError.errors['content'].message }}
+					</div>
+				<input class="add_topic" type="submit" value="Add Topic" ng-click="PC.addPost()" />
+			</form>
+		</div>
+	</div>
+</div>

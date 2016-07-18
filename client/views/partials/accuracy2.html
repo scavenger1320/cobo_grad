@@ -1,0 +1,29 @@
+<div id="accuracy2" ng-controller="GradesController as GC">
+	<div class="navMenu">
+		<a href="#/dashboard">Back</a> | <a href="#/forum">Forum</a> | <a href="" ng-click="GC.logout()">Logout</a>
+	</div>
+	<h3>Don't have time to go through each defect?  Get a VERY general idea of the condition of your comic by just answering a couple basic questions</h3>
+	<h4 class="warning">**This option is just a placeholder and is not indicative of the final product**</h4>
+	<form>
+		<label for="coverless">Is the cover missing?
+			<select id="coverless" class="gradeIt" ng-model="GC.newGrade.cover" convert-to-number>
+				<option></option>
+				<option value="0">No</option>
+				<option value="2">Partially</option>
+				<option value="4">Yes</option>
+			</select>	
+		</label>
+		<label for="tears">Are there any tears?
+			<select id="tears" class="gradeIt" ng-model="GC.newGrade.tears" convert-to-number>
+				<option></option>
+				<option value="0">No</option>
+				<option value="1">Some Small Ones</option>
+				<option value="2">Really Big Ones</option>
+			</select>
+		</label>
+		<input type="submit" class="gradeIt" value="Grād It!" ng-click="GC.getGrade2()">
+	</form>
+	<div class="yourGrade" ng-if="GC.grade">
+		<h3 class="graded">Your comic is in {{GC.grade}} condition</h3>
+	</div>
+</div>

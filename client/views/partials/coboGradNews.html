@@ -1,0 +1,42 @@
+<div id="coboGradNews" ng-controller="ForumsController as FC">
+	<div class="navMenu">
+		<a href="#/dashboard">Dashboard</a> | <a href="#/forum">Forum Main</a> | <a href="" ng-click="FC.logout()">Logout</a>
+	</div>
+	<table>
+		<thead>
+			<tr>
+				<th>Sub-Category</th>
+				<th>Latest</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<a href="#/forum/coboGradNews/news"><h4>Cobo Grād News</h4></a>
+					<p>News, features and announcements from Cobo Grād can be discussed here!</p>
+				</td>
+				<td>
+					<p ng-repeat="topic in FC.topics | filter:({subcategory: 'news'}) | limitTo: 5"><a href="#/forum/{{ topic.category}}/{{ topic.subcategory}}/{{ topic._id }}">{{ topic.title }}</a> by {{ topic._user.username }} {{ topic.timeago }}</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#/forum/coboGradNews/announcements"><h4>Cobo Grad Announcements</h4></a>
+					<p>Want to talk about Captain America actually being Hydra? Have questions about collecting? Or maybe about selling your collection? You've come to the right place!</p>
+				</td>
+				<td>
+					<p ng-repeat="topic in FC.topics | filter:({subcategory: 'announcements'}) | limitTo: 5"><a href="#/forum/{{ topic.category}}/{{ topic.subcategory}}/{{ topic._id }}">{{ topic.title }}</a> by {{ topic._user.username }} {{ topic.timeago }}</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="#/forum/coboGradNews/features"><h4>Cobo Grād Features</h4></a>
+					<p>Anything related to Cobo Grād including suggestions, bug reports, faqs are all discussed here!</p>
+				</td>
+				<td>
+					<p ng-repeat="topic in FC.topics | filter:({subcategory: 'features'}) | limitTo: 5"><a href="#/forum/{{ topic.category}}/{{ topic.subcategory}}/{{ topic._id }}">{{ topic.title }}</a> by {{ topic._user.username }} {{ topic.timeago }}</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

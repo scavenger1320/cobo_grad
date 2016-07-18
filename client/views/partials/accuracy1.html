@@ -1,0 +1,41 @@
+<div id="accuracy1" ng-controller="GradesController as GC">
+	<div class="navMenu">
+		<a href="#/dashboard">Back</a> | <a href="#/forum">Forum</a> | <a href="" ng-click="GC.logout()">Logout</a>	
+	</div>
+	<h3>Just select the number of defects your comic has and see what range of grades your comic book most likely falls in.  Grade ranges assume defects are minor. If any defect is major (i.e. piece of cover is torn off) the grade could easily go below the suggested minimum.</h3>
+	<h4>About how many defects can you count?</h4>
+	<form>
+		<select class="gradeIt" ng-model="GC.newGrade.defects">
+			<option>0</option>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+			<option>6</option>
+			<option>7</option>
+			<option>8</option>
+			<option>9</option>
+			<option>10</option>
+			<option>11</option>
+			<option>12</option>
+			<option>13</option>
+			<option>14</option>
+			<option>15</option>
+			<option>16</option>
+			<option>17</option>
+			<option>18</option>
+			<option>19</option>
+			<option>20</option>
+			<option>21</option>
+			<option>22</option>
+			<option>23</option>
+			<option>24</option>
+			<option>25</option>
+		</select>
+		<input type="submit" class="gradeIt" value="Grād It!" ng-click="GC.getGrade()">
+	</form>
+	<div class="yourGrade" ng-if="GC.grade">
+		<h3 class="graded">The lowest probable grade is {{GC.grade.minGrade}} and the highest possible grade is {{GC.grade.maxGrade}}</h3>
+	</div>
+</div>

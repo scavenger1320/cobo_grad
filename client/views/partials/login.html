@@ -1,0 +1,50 @@
+<div id="login" ng-controller="UsersController as UC">
+	<a id="backButton" href="#/">Back</a>
+	<form>
+		<fieldset>
+			<legend> Log-In </legend>
+			<label for="username">Username <input id="username" type="text" ng-model="UC.regUser.regUsername" /></label>
+			<div ng-if="UC.validationError.errors['regUsername'].kind" class="error">
+				{{ UC.validationError.errors['regUsername'].message }}
+			</div>
+			<label for="password">Password <input id="password" type="password" ng-model="UC.regUser.regPassword" /></label>
+			<div ng-if="UC.validationError.errors['regPassword'].kind" class="error">
+				{{ UC.validationError.errors['regPassword'].message }}
+			</div>
+			<input class="submit" type="submit" value="Log-In" ng-click="UC.verifyUser()" />
+		</fieldset>
+	</form>
+	<h2 class="warning">*** Site is currently in pre-alpha stage.  Please do not register using any sensitive information or actual passwords you might be using elsewhere ***</h2>
+	<form>
+		<fieldset>
+			<legend> Register </legend>
+			<label for="first_name">First Name <input id="first_name" type="text" ng-model="UC.newUser.first_name" /></label>
+			<div ng-if="UC.validationError.errors['first_name'].kind" class="error">
+				{{ UC.validationError.errors['first_name'].message }}
+			</div>
+			<label for="last_name">Last Name <input id="last_name" type="text" ng-model="UC.newUser.last_name" /></label>
+			<div ng-if="UC.validationError.errors['last_name'].kind" class="error">
+				{{ UC.validationError.errors['last_name'].message }}
+			</div>
+			<label for="email">Email <input id="email" type="email" ng-model="UC.newUser.email" /></label>
+			<div ng-if="UC.validationError.errors['email'].kind" class="error">
+				{{ UC.validationError.errors['email'].message }}
+			</div>
+			<label for="newUsername">Username <input id="newUsername" type="text" ng-model="UC.newUser.username" /></label>
+			<div ng-if="UC.validationError.errors['username'].kind" class="error">
+				{{ UC.validationError.errors['username'].message }}
+			</div>
+			<label for="newPassword">Password <input id="newPassword" type="password" ng-model="UC.newUser.password" /></label>
+			<div ng-if="UC.validationError.errors['password'].kind" class="error">
+				{{ UC.validationError.errors['password'].message }}
+			</div>
+			<label for="confirmPassword">Confirm Password <input id="confirmPassword" type="password" ng-model="UC.newUser.confirm" /></label>
+			<div ng-if="UC.validationError.errors['confirm'].kind" class="error">
+				{{ UC.validationError.errors['confirm'].message }}
+			</div>
+			<input class="submit" type="submit" value="Register" ng-click="UC.addUser()" />
+		</fieldset>
+	</form>
+	<a href="" title="Guest will be only be able to view forums.  Must login as a registered user in order to post or comment" ng-click="UC.addGuest()">Enter as a Guest</a>
+	<a id="facebook" href="" title="FUTURE FEATURE - Facebook login currently inoperational">Login with Facebook</a>
+</div>
