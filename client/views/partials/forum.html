@@ -1,6 +1,6 @@
 <div id="forum" ng-controller="ForumsController as FC">
 	<div class="navMenu">
-		<a href="#/dashboard">Dashboard</a> | <a href="" ng-click="FC.logout()">Logout</a>
+		<a href="#!/dashboard">Dashboard</a> | <a href="" ng-click="FC.logout()">Logout</a>
 	</div>
 	<table>
 		<thead>
@@ -12,38 +12,38 @@
 		<tbody>
 			<tr>
 				<td>
-					<a href="#/forum/coboGradNews"><h4>News</h4></a>
+					<a href="#!/forum/coboGradNews"><h4>News</h4></a>
 					<p>News, features and announcements from Cobo Grād can be discussed here!</p>
 				</td>
 				<td>
-					<p ng-repeat="topic in FC.topics | filter:({category: 'coboGradNews'}) | limitTo: 5"><a href="#/forum/{{ topic.category}}/{{ topic.subcategory}}/{{ topic._id }}">{{ topic.title }}</a> by {{ topic._user.username }} {{ topic.timeago }}</p>
+					<p ng-repeat="topic in FC.topics | filter:({category: 'coboGradNews'}) | limitTo: 5"><a href="#!/forum/{{ topic.category}}/{{ topic.subcategory}}/{{ topic._id }}">{{ topic.title }}</a> by {{ topic._user.username }} {{ topic.timeago }}</p>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<a href="#/forum/generalDiscussion"><h4>General Discussion</h4></a>
+					<a href="#!/forum/generalDiscussion"><h4>General Discussion</h4></a>
 					<p>Anything related to Cobo Grād including suggestions, bug reports, faqs are all discussed here!</p>
 				</td>
 				<td>
-					<p ng-repeat="topic in FC.topics | filter:({category: 'generalDiscussion'}) | limitTo: 5"><a href="#/forum/{{ topic.category}}/{{ topic.subcategory}}/{{ topic._id }}">{{ topic.title }}</a> by {{ topic._user.username }} {{ topic.timeago }}</p>
+					<p ng-repeat="topic in FC.topics | filter:({category: 'generalDiscussion'}) | limitTo: 5"><a href="#!/forum/{{ topic.category}}/{{ topic.subcategory}}/{{ topic._id }}">{{ topic.title }}</a> by {{ topic._user.username }} {{ topic.timeago }}</p>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<a href="#/forum/comicBooks"><h4>Comic books</h4></a>
+					<a href="#!/forum/comicBooks"><h4>Comic books</h4></a>
 					<p>Want to talk about Captain America actually being Hydra? Have questions about collecting? Or maybe about selling your collection? You've come to the right place!</p>
 				</td>
 				<td>
-					<p ng-repeat="topic in FC.topics | filter:({category: 'comicBooks'}) | limitTo: 5"><a href="#/forum/{{ topic.category}}/{{ topic.subcategory}}/{{ topic._id }}">{{ topic.title }}</a> by {{ topic._user.username }} {{ topic.timeago }}</p>
+					<p ng-repeat="topic in FC.topics | filter:({category: 'comicBooks'}) | limitTo: 5"><a href="#!/forum/{{ topic.category}}/{{ topic.subcategory}}/{{ topic._id }}">{{ topic.title }}</a> by {{ topic._user.username }} {{ topic.timeago }}</p>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<a href="#/forum/random"><h4>Random</h4></a>
+					<a href="#!/forum/random"><h4>Random</h4></a>
 					<p>Just want to talk about some random crap that has nothing to do with Cobo Grād? This is the place to do it!</p>
 				</td>
 				<td>
-					<p ng-repeat="topic in FC.topics | filter:({category: 'random'}) | limitTo: 5"><a href="#/forum/{{ topic.category}}/{{ topic.subcategory}}/{{ topic._id }}">{{ topic.title }}</a> by {{ topic._user.username }} {{ topic.timeago }}</p>
+					<p ng-repeat="topic in FC.topics | filter:({category: 'random'}) | limitTo: 5"><a href="#!/forum/{{ topic.category}}/{{ topic.subcategory}}/{{ topic._id }}">{{ topic.title }}</a> by {{ topic._user.username }} {{ topic.timeago }}</p>
 				</td>
 			</tr>
 		</tbody>

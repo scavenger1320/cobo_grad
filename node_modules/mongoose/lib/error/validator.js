@@ -2,8 +2,7 @@
  * Module dependencies.
  */
 
-var MongooseError = require('../error.js');
-var errorMessages = MongooseError.messages;
+var MongooseError = require('./');
 
 /**
  * Schema validator error
@@ -16,21 +15,22 @@ var errorMessages = MongooseError.messages;
 function ValidatorError(properties) {
   var msg = properties.message;
   if (!msg) {
-    msg = errorMessages.general.default;
+    msg = MongooseError.messages.general.default;
   }
 
   var message = this.formatMessage(msg, properties);
   MongooseError.call(this, message);
+  this.name = 'ValidatorError';
   if (Error.captureStackTrace) {
     Error.captureStackTrace(this);
   } else {
     this.stack = new Error().stack;
   }
   this.properties = properties;
-  this.name = 'ValidatorError';
   this.kind = properties.type;
   this.path = properties.path;
   this.value = properties.value;
+  this.reason = properties.reason;
 }
 
 /*!

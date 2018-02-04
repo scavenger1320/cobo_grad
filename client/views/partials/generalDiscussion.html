@@ -1,6 +1,6 @@
 <div id="generalDiscussion" ng-controller="ForumsController as FC">
 	<div class="navMenu">
-		<a href="#/dashboard">Dashboard</a> | <a href="#/forum">Forum Main</a> | <a href="" ng-click="FC.logout()">Logout</a>
+		<a href="#!/dashboard">Dashboard</a> | <a href="#!/forum">Forum Main</a> | <a href="" ng-click="FC.logout()">Logout</a>
 	</div>
 	<table>
 		<thead>
@@ -12,29 +12,29 @@
 		<tbody>
 			<tr>
 				<td>
-					<a href="#/forum/generalDiscussion/faqs"><h4>Faqs</h4></a>
+					<a href="#!/forum/generalDiscussion/faqs"><h4>Faqs</h4></a>
 					<p>Get answers to some commonly asked questions or add your own.</p>
 				</td>
 				<td>
-					<p ng-repeat="topic in FC.topics | filter:({subcategory: 'faqs'}) | limitTo: 5"><a href="#/forum/{{ topic.category}}/{{ topic.subcategory}}/{{ topic._id }}">{{ topic.title }}</a> by {{ topic._user.username }} {{ topic.timeago }}</p>
+					<p ng-repeat="topic in FC.topics | filter:({subcategory: 'faqs'}) | limitTo: 5"><a href="#!/forum/{{ topic.category}}/{{ topic.subcategory}}/{{ topic._id }}">{{ topic.title }}</a> by {{ topic._user.username }} {{ topic.timeago }}</p>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<a href="#/forum/generalDiscussion/suggestions"><h4>Suggestions</h4></a>
+					<a href="#!/forum/generalDiscussion/suggestions"><h4>Suggestions</h4></a>
 					<p>Have a suggestion?  We'd love to hear about it!</p>
 				</td>
 				<td>
-					<p ng-repeat="topic in FC.topics | filter:({subcategory: 'suggestions'}) | limitTo: 5"><a href="#/forum/{{ topic.category}}/{{ topic.subcategory}}/{{ topic._id }}">{{ topic.title }}</a> by {{ topic._user.username }} {{ topic.timeago }}</p>
+					<p ng-repeat="topic in FC.topics | filter:({subcategory: 'suggestions'}) | limitTo: 5"><a href="#!/forum/{{ topic.category}}/{{ topic.subcategory}}/{{ topic._id }}">{{ topic.title }}</a> by {{ topic._user.username }} {{ topic.timeago }}</p>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<a href="#/forum/generalDiscussion/bugs"><h4>Bug Reports</h4></a>
+					<a href="#!/forum/generalDiscussion/bugs"><h4>Bug Reports</h4></a>
 					<p>Found a bug?  Let us know here so that we can squash it!</p>
 				</td>
 				<td>
-					<p ng-repeat="topic in FC.topics | filter:({subcategory: 'bugs'}) | limitTo: 5"><a href="#/forum/{{ topic.category}}/{{ topic.subcategory}}/{{ topic._id }}">{{ topic.title }}</a> by {{ topic._user.username }} {{ topic.timeago }}</p>
+					<p ng-repeat="topic in FC.topics | filter:({subcategory: 'bugs'}) | limitTo: 5"><a href="#!/forum/{{ topic.category}}/{{ topic.subcategory}}/{{ topic._id }}">{{ topic.title }}</a> by {{ topic._user.username }} {{ topic.timeago }}</p>
 				</td>
 			</tr>
 		</tbody>

@@ -3,11 +3,11 @@ comicApp.factory('UserFactory', function($http){
 
 	factory.create = function(info, callback, errcallback){
 		$http.post('/users', info)
-			.success(function(output){
+			.then(function(output){
 				factory.loggedUser = output;
 				callback(output);
-			})
-			.error(function(error){
+			},
+			function(error){
 				errcallback(error);
 			});
 	}
@@ -37,11 +37,11 @@ comicApp.factory('UserFactory', function($http){
 		}
 		var username = info.regUsername;
 		$http.post('/users/'+ username, info)
-			.success(function(output){
+			.then(function(output){
 				factory.loggedUser = output;
 				callback(output);
-			})
-			.error(function(error){
+			},
+			function(error){
 				errcallback(error);
 			})
 	}
@@ -59,7 +59,7 @@ comicApp.factory('GradeFactory', function($http){
 	var factory = {};
 
 	factory.create = function(info, callback){
-		$http.post('/grades', info).success(function(output){
+		$http.post('/grades', info).then(function(output){
 			callback(output);
 		})
 	}
@@ -76,33 +76,33 @@ comicApp.factory('ForumFactory', function($http){
 		// console.log(categories.subcategory);
 		if(categories.category == undefined){
 			// console.log("i'm in the if");
-			$http.get('/topics').success(function(output){
+			$http.get('/topics').then(function(output){
 				// console.log(output);
-				callback(output);
+				callback(output.data);
 			})			
 		}
 		else if(categories.subcategory == undefined){
 			// console.log("i'm in the else if");
-			$http.get('/topics/' +  categories.category).success(function(output){
+			$http.get('/topics/' +  categories.category).then(function(output){
 				// console.log(output);
-				callback(output);
+				callback(output.data);
 			})
 		}
 		else {
 			// console.log("i'm in the else");
-			$http.get('/topics/' + categories.category + '/' + categories.subcategory).success(function(output){
+			$http.get('/topics/' + categories.category + '/' + categories.subcategory).then(function(output){
 				// console.log(output);
-				callback(output);
+				callback(output.data);
 			})
 		}
 	}
 
 	factory.createTopic = function(topic, callback, errcallback){
 		$http.post('/topics', topic)
-			.success(function(topic){
+			.then(function(topic){
 				callback(topic);
-			})
-			.error(function(error){
+			},
+			function(error){
 				// console.log(error);
 				errcallback(error);
 			});
@@ -116,18 +116,18 @@ comicApp.factory('PostFactory', function($http){
 
 	factory.index = function(topic, callback){
 		// console.log(topic);
-		$http.get('/posts/' + topic).success(function(output){
+		$http.get('/posts/' + topic).then(function(output){
 			// console.log(output);
-			callback(output);
+			callback(output.data);
 		})
 	}
 
 	factory.create = function(post, callback, errcallback){
 		$http.post('/posts', post)
-			.success(function(post){
+			.then(function(post){
 				callback(post);
-			})
-			.error(function(error){
+			},
+			function(error){
 				errcallback(error);
 			})
 	}
@@ -139,18 +139,18 @@ comicApp.factory('CommentFactory', function($http){
 	var factory = {};
 
 	factory.index = function(post, callback){
-		$http.get('/comments/' + post).success(function(output){
+		$http.get('/comments/' + post).then(function(output){
 			console.log(output);
-			callback(output);
+			callback(output.data);
 		})
 	}
 
 	factory.create = function(comment, callback, errcallback){
 		$http.post('/comments', comment)
-			.success(function(comment){
+			.then(function(comment){
 				callback(comment);
-			})
-			.error(function(error){
+			},
+			function(error){
 				errcallback(error);
 			})
 	}

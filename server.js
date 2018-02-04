@@ -1,17 +1,21 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var path = require('path');
+const express = require('express');
+const bodyParser = require('body-parser');
+const path = require('path');
+const mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
 
-var app = express();
+const app = express();
 
 app.use(express.static(path.join(__dirname + '/client')));
 app.use('/scripts', express.static(__dirname + '/node_modules/'));
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
+// connect to mongo db and 
 require('./server/config/mongoose.js');
-var routes = require('./server/config/routes.js')(app);
+const routes = require('./server/config/routes.js')(app);
 
-app.listen(8000, function(){
-	console.log("Port 8000 Alive and Well");
+// start server
+app.listen(8000, () => {
+	console.log('Port 8000 Alive and Well');
 })

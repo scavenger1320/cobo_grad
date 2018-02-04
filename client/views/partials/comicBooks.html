@@ -1,6 +1,6 @@
 <div id="comicBooks" ng-controller="ForumsController as FC">
 	<div class="navMenu">
-		<a href="#/dashboard">Dashboard</a> | <a href="#/forum">Forum Main</a> | <a href="" ng-click="FC.logout()">Logout</a>
+		<a href="#!/dashboard">Dashboard</a> | <a href="#!/forum">Forum Main</a> | <a href="" ng-click="FC.logout()">Logout</a>
 	</div>
 	<table>
 		<thead>
@@ -12,52 +12,52 @@
 		<tbody>
 			<tr>
 				<td>
-					<a href="#/forum/comicBooks/books"><h4>Comic Books</h4></a>
+					<a href="#!/forum/comicBooks/books"><h4>Comic Books</h4></a>
 					<p>Talk about the happenings in the funny pages</p>
 				</td>
 				<td>
-					<p ng-repeat="topic in FC.topics | filter:({subcategory: 'books'}) | limitTo: 5"><a href="#/forum/{{ topic.category}}/{{ topic.subcategory}}/{{ topic._id }}">{{ topic.title }}</a> by {{ topic._user.username }} {{ topic.timeago }}</p>
+					<p ng-repeat="topic in FC.topics | filter:({subcategory: 'books'}) | limitTo: 5"><a href="#!/forum/{{ topic.category}}/{{ topic.subcategory}}/{{ topic._id }}">{{ topic.title }}</a> by {{ topic._user.username }} {{ topic.timeago }}</p>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<a href="#/forum/comicBooks/moviesTV"><h4>Movies/TV</h4></a>
+					<a href="#!/forum/comicBooks/moviesTV"><h4>Movies/TV</h4></a>
 					<p>Talk about all of your favorite comic book based movies or tv shows</p>
 				</td>
 				<td>
-					<p ng-repeat="topic in FC.topics | filter:({subcategory: 'moviesTV'}) | limitTo: 5"><a href="#/forum/{{ topic.category}}/{{ topic.subcategory}}/{{ topic._id }}">{{ topic.title }}</a> by {{ topic._user.username }} {{ topic.timeago }}</p>
+					<p ng-repeat="topic in FC.topics | filter:({subcategory: 'moviesTV'}) | limitTo: 5"><a href="#!/forum/{{ topic.category}}/{{ topic.subcategory}}/{{ topic._id }}">{{ topic.title }}</a> by {{ topic._user.username }} {{ topic.timeago }}</p>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<a href="#/forum/comicBooks/collecting"><h4>Collecting</h4></a>
+					<a href="#!/forum/comicBooks/collecting"><h4>Collecting</h4></a>
 					<p>All things collecting can be found here.  Have a great find? Got a question
 						about something? You're in the right place.
 					</p>
 				</td>
 				<td>
-					<p ng-repeat="topic in FC.topics | filter:({subcategory: 'collecting'}) | limitTo: 5"><a href="#/forum/{{ topic.category}}/{{ topic.subcategory}}/{{ topic._id }}">{{ topic.title }}</a> by {{ topic._user.username }} {{ topic.timeago }}</p>
+					<p ng-repeat="topic in FC.topics | filter:({subcategory: 'collecting'}) | limitTo: 5"><a href="#!/forum/{{ topic.category}}/{{ topic.subcategory}}/{{ topic._id }}">{{ topic.title }}</a> by {{ topic._user.username }} {{ topic.timeago }}</p>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<a href="#/forum/comicBooks/selling"><h4>Selling</h4></a>
+					<a href="#!/forum/comicBooks/selling"><h4>Selling</h4></a>
 					<p>Interesting in selling your collection or becoming a dealer?  Get all the information 
 						you need here
 					</p>
 				</td>
 				<td>
-					<p ng-repeat="topic in FC.topics | filter:({subcategory: 'selling'}) | limitTo: 5"><a href="#/forum/{{ topic.category}}/{{ topic.subcategory}}/{{ topic._id }}">{{ topic.title }}</a> by {{ topic._user.username }} {{ topic.timeago }}</p>
+					<p ng-repeat="topic in FC.topics | filter:({subcategory: 'selling'}) | limitTo: 5"><a href="#!/forum/{{ topic.category}}/{{ topic.subcategory}}/{{ topic._id }}">{{ topic.title }}</a> by {{ topic._user.username }} {{ topic.timeago }}</p>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<a href="#/forum/comicBooks/conventions"><h4>Conventions</h4></a>
+					<a href="#!/forum/comicBooks/conventions"><h4>Conventions</h4></a>
 					<p>Come here to talk about any conventions coming up or recent ones that you've been to
 					</p>
 				</td>
 				<td>
-					<p ng-repeat="topic in FC.topics | filter:({subcategory: 'conventions'}) | limitTo: 5"><a href="#/forum/{{ topic.category}}/{{ topic.subcategory}}/{{ topic._id }}">{{ topic.title }}</a> by {{ topic._user.username }} {{ topic.timeago }}</p>
+					<p ng-repeat="topic in FC.topics | filter:({subcategory: 'conventions'}) | limitTo: 5"><a href="#!/forum/{{ topic.category}}/{{ topic.subcategory}}/{{ topic._id }}">{{ topic.title }}</a> by {{ topic._user.username }} {{ topic.timeago }}</p>
 				</td>
 			</tr>
 		</tbody>

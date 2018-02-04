@@ -1,6 +1,6 @@
 <div id="subcategory" ng-controller="ForumsController as FC">
 	<div class="navMenu">	
-		<a href="#/dashboard">Dashboard</a> | <a href="#/forum">Forum Main</a> | <a href="#/forum/{{ FC.category }}">Back to Sub-Category List</a> | <a href="" ng-click="FC.logout()">Logout</a>
+		<a href="#!/dashboard">Dashboard</a> | <a href="#!/forum">Forum Main</a> | <a href="#!/forum/{{ FC.category }}">Back to Sub-Category List</a> | <a href="" ng-click="FC.logout()">Logout</a>
 	</div>
 	<div class="newTopic">	
 		<button class="slide" ng-hide="FC.loggedUser.username == 'Guest'">+ New Topic</button>
@@ -30,7 +30,7 @@
 		</thead>
 		<tbody>
 			<tr ng-repeat="topic in FC.topics">
-				<td><a href="#/forum/{{ FC.category}}/{{ FC.subcategory}}/{{ topic._id }}">{{ topic.title }}</a></td>
+				<td><a href="#!/forum/{{ FC.category}}/{{ FC.subcategory}}/{{ topic._id }}">{{ topic.title }}</a></td>
 				<td>**Future Feature**</td>
 				<td>{{ topic.replies }}</td>
 				<td>{{ topic.views }}</td>

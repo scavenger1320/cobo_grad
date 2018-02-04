@@ -16,12 +16,14 @@
  *
  * Click the "show code" link below to see all defaults.
  *
- * @property messages
+ * @static messages
  * @receiver MongooseError
  * @api public
  */
 
 var msg = module.exports = exports = {};
+
+msg.DocumentNotFoundError = null;
 
 msg.general = {};
 msg.general.default = 'Validator failed for path `{PATH}` with value `{VALUE}`';
